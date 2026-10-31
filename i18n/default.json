@@ -1,0 +1,147 @@
+{
+  //
+  // Photo text
+  //
+  "stamp": "{{season}} {{day}}, Y{{year}}",
+  "photo.date": "{{season}} {{day}}, Year {{year}}",
+  "photo.date-time": "{{date}}, {{time}}",
+  "photo.no-caption": "At {{location}}",
+  "photo.location": "Taken at: {{location}}",
+  "photo.festival": "Festival: {{festival}}",
+  "photo.weather": "Weather: {{weather}}",
+  "photo.people": "In this photo: {{people}}",
+
+  "weather.Sun": "Sunny",
+  "weather.Rain": "Rainy",
+  "weather.Storm": "Stormy",
+  "weather.Snow": "Snowy",
+  "weather.GreenRain": "Green rain",
+  "weather.Wind": "Windy",
+  "weather.Indoors": "Indoors",
+
+  //
+  // Viewfinder
+  //
+  "viewfinder.title": "Camera",
+  "viewfinder.cheese": "Say cheese!",
+  "viewfinder.hint.snap.mouse": "Click: take photo",
+  "viewfinder.hint.snap.gamepad": "X: take photo",
+  "viewfinder.hint.pose.mouse": "Right-click: ask {{name}} to pose",
+  "viewfinder.hint.pose.gamepad": "A: ask {{name}} to pose",
+  "viewfinder.hint.exit.mouse": "{{key}} / Esc: put camera away",
+  "viewfinder.hint.exit.gamepad": "B: put camera away",
+  "viewfinder.hint.posing": "{{name}} is posing...",
+
+  //
+  // Posing
+  //
+  "pose.decline.1": "A photo? Um... maybe once we know each other a little better.",
+  "pose.decline.2": "Oh, I'd rather not. Sorry.",
+  "pose.decline.3": "Hmm? No thanks, I'm not really in the mood for pictures.",
+
+  "pose.agree.friend.1": "A photo? Sure, why not!",
+  "pose.agree.friend.2": "Oh! Okay, let me fix my hair first...",
+  "pose.agree.friend.3": "Alright, I'll pose. Make it quick!",
+
+  "pose.agree.best.1": "Of course! We should take more of these.$h",
+  "pose.agree.best.2": "A photo of us? I'd love that!$h",
+  "pose.agree.best.3": "Say cheese, @! This one's going on my wall.$h",
+
+  "pose.agree.spouse.1": "Another one for the album? Come here, you.$h",
+  "pose.agree.spouse.2": "I love that you want photos of us.$l",
+  "pose.agree.spouse.3": "Okay, okay! Let's make it a good one.$h",
+
+  "caption.pose.friend": "Me and {{name}}",
+  "caption.pose.best": "Best friends: me and {{name}}",
+  "caption.pose.spouse": "Me and my {{name}}",
+  "caption.pose.child": "Me and little {{name}}",
+  "caption.pose.pet": "Me and {{name}}",
+
+  //
+  // Milestones
+  //
+  "caption.milestone.DayOne": "Day one on {{farm}} Farm",
+  "caption.milestone.NewYear": "Year {{year}} begins!",
+  "caption.milestone.Engaged": "{{name}} said yes!",
+  "caption.milestone.Wedding": "Our wedding day: me and {{name}}",
+  "caption.milestone.Child": "Welcome to the family, {{name}}!",
+  "caption.milestone.House.1": "Our new kitchen!",
+  "caption.milestone.House.2": "The house is growing (so is the family?)",
+  "caption.milestone.House.3": "A cellar of our own",
+  "caption.milestone.Pet": "{{name}} joins the farm",
+  "caption.milestone.BestFriends": "Best friends with {{name}}",
+  "caption.milestone.Sweethearts": "Sweethearts: me and {{name}}",
+  "caption.milestone.Greenhouse": "The greenhouse is fixed!",
+  "caption.milestone.CommunityCenter": "The Community Center is restored!",
+  "caption.milestone.Joja": "The Joja warehouse is finished.",
+  "caption.milestone.Perfection": "Perfection.",
+
+  //
+  // HUD messages
+  //
+  "hud.photo-saved": "Photo saved! Press {{key}} to open your album.",
+  "hud.photo-failed": "Couldn't take a photo right now.",
+  "hud.milestone": "A new memory: {{caption}}",
+  "hud.on-this-day": "{{years}} year(s) ago today: {{caption}}",
+
+  //
+  // Album
+  //
+  "album.title": "{{farm}} Farm Album",
+  "album.filter": "{{filter}} ({{count}})",
+  "album.page": "Page {{page}} / {{pages}}",
+  "album.open-folder": "Open folder",
+  "album.empty": "No memories yet. Press {{key}} to take out your camera!",
+  "album.empty-filter": "No photos match this filter.",
+
+  "filter.all": "All photos",
+  "filter.milestones": "Milestones",
+  "filter.favorites": "Favorites",
+  "filter.posed": "Posed with friends",
+  "filter.year": "Year {{year}}",
+  "filter.person": "With {{name}}",
+
+  //
+  // Photo viewer
+  //
+  "viewer.caption-title": "Caption",
+  "viewer.caption-placeholder": "Click to write a caption...",
+  "viewer.milestone": "Milestone photo",
+  "viewer.position": "Photo {{index}} of {{count}}",
+  "viewer.favorite": "Favorite",
+  "viewer.unfavorite": "Unfavorite",
+  "viewer.export": "Save as polaroid",
+  "viewer.exported": "Polaroid saved! Find it in the Polaroids folder of your album (use Open folder in the album).",
+  "viewer.export-failed": "Couldn't save the polaroid. See the SMAPI console for details.",
+  "viewer.delete": "Delete photo",
+  "viewer.delete-confirm": "Delete this photo forever?",
+  "viewer.back": "Back to album",
+
+  //
+  // Config
+  //
+  "config.section.controls": "Controls",
+  "config.section.camera": "Camera",
+  "config.section.memories": "Memories",
+
+  "config.CameraKey.name": "Camera key",
+  "config.CameraKey.tooltip": "Takes out (or puts away) your camera. While it's out, click to take a photo or right-click a nearby villager to ask them to pose.",
+  "config.AlbumKey.name": "Album key",
+  "config.AlbumKey.tooltip": "Opens your photo album.",
+
+  "config.StampDate.name": "Date stamp",
+  "config.StampDate.tooltip": "Print the in-game date in the corner of each photo, like an old film camera.",
+  "config.ShutterEffects.name": "Shutter sound and flash",
+  "config.ShutterEffects.tooltip": "Play the camera sound and flash the screen when a photo is taken.",
+  "config.HideHudInPhotoMode.name": "Hide HUD while framing",
+  "config.HideHudInPhotoMode.tooltip": "Hide the toolbar, clock and other HUD while your camera is out. Photos never include the HUD either way.",
+  "config.MinHeartsToPose.name": "Hearts needed to pose",
+  "config.MinHeartsToPose.tooltip": "How many hearts a villager needs before they'll pose for a photo with you. Your spouse, children and pets always will.",
+
+  "config.AutoCaptureMilestones.name": "Capture milestones",
+  "config.AutoCaptureMilestones.tooltip": "Automatically take photos of big moments: your wedding, new children, the Community Center ceremony, new best friends, and more.",
+  "config.ShowHudOnMemory.name": "Milestone messages",
+  "config.ShowHudOnMemory.tooltip": "Show a message when a milestone photo is added to your album.",
+  "config.OnThisDayReminders.name": "\"On this day\" reminders",
+  "config.OnThisDayReminders.tooltip": "Each morning, remind you of a photo taken on the same day in an earlier year."
+}

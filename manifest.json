@@ -1,0 +1,17 @@
+{
+  "Name": "Memory Album",
+  "Author": "ygsnaffy",
+  "Version": "1.0.0",
+  "Description": "A camera and an in-game photo album. Take date-stamped photos, ask villagers to pose with you, and let the album capture your wedding, children and other milestones automatically.",
+  "UniqueID": "ygsnaffy.MemoryAlbum",
+  "EntryDll": "MemoryAlbum.dll",
+  "MinimumApiVersion": "4.0.0",
+  "MinimumGameVersion": "1.6.0",
+  "UpdateKeys": [ "Nexus:????" ],
+  "Dependencies": [
+    {
+      "UniqueID": "spacechase0.GenericModConfigMenu",
+      "IsRequired": false
+    }
+  ]
+}

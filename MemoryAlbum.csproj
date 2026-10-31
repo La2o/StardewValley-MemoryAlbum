@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>MemoryAlbum</AssemblyName>
+    <RootNamespace>MemoryAlbum</RootNamespace>
+    <Version>1.0.0</Version>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <EnableHarmony>false</EnableHarmony>
+    <!-- docs and screenshots aren't part of the mod -->
+    <IgnoreModFilePatterns>\.md$, ^docs[/\\]</IgnoreModFilePatterns>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Pathoschild.Stardew.ModBuildConfig" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="tools\**" />
+    <Compile Remove="tools\**" />
+  </ItemGroup>
+
+</Project>

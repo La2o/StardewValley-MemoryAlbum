@@ -1,0 +1,6 @@
+{
+  "_comment": "Nexus IDs for tools/publish-nexus.ps1. ModId is the page ID (in the mod URL and manifest UpdateKeys). ApiModId and FileId come from the Files tab > file menu > Advanced. These aren't secret; the API key goes in the NEXUS_API_KEY environment variable instead. Fill these in after the first release is uploaded by hand.",
+  "ModId": null,
+  "ApiModId": "",
+  "FileId": ""
+}
