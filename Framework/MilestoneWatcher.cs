@@ -238,6 +238,7 @@ public class MilestoneWatcher
             state.Event = ev;
             state.EventTicks = 0;
             state.KissTick = -1;
+            state.KissCommandIndex = ev.isWedding ? FindKissCommand(ev) : -1;
             state.EventCaptured = false;
         }
         state.EventTicks++;
@@ -252,8 +253,8 @@ public class MilestoneWatcher
         bool ready;
         if (ev.isWedding)
         {
-            // the kiss is the shot
-            if (state.KissTick < 0 && GetCurrentCommand(ev)?.StartsWith("showKissFrame", StringComparison.OrdinalIgnoreCase) == true)
+            // the kiss is the shot (instant commands can start and finish in one tick, so compare positions in the script)
+            if (state.KissTick < 0 && state.KissCommandIndex >= 0 && ev.CurrentCommand >= state.KissCommandIndex)
                 state.KissTick = state.EventTicks;
 
             ready = state.KissTick >= 0
@@ -299,6 +300,14 @@ public class MilestoneWatcher
         HashSet<string> pending = GetSet(player, ModIds.MilestonesPendingKey);
         done.Add(key);
         pending.Remove(key);
+
+        // a bigger moment with the same person makes the smaller ones still waiting redundant (e.g. no "best friends" photo after the wedding photo)
+        foreach (string smaller in GetSupersededMilestones(key))
+        {
+            if (pending.Remove(smaller))
+                done.Add(smaller);
+        }
+
         SetSet(player, ModIds.MilestonesDoneKey, done);
         SetSet(player, ModIds.MilestonesPendingKey, pending);
 
@@ -374,13 +383,37 @@ public class MilestoneWatcher
         };
     }
 
-    /// <summary>Get the event command being run, if any.</summary>
-    private static string? GetCurrentCommand(Event ev)
+    /// <summary>Get the index of the kiss in a wedding script, or -1 if it has none.</summary>
+    /// <remarks>The 1.6 wedding shows the kiss frame and then a heart sprite (<c>specificTemporarySprite heart</c>) followed by a pause. Modded scripts may use <c>showKissFrame</c> instead.</remarks>
+    private static int FindKissCommand(Event ev)
     {
-        int index = ev.CurrentCommand;
-        return ev.eventCommands is { } commands && index >= 0 && index < commands.Length
-            ? commands[index]
-            : null;
+        if (ev.eventCommands is not { } commands)
+            return -1;
+
+        return Array.FindIndex(commands, command =>
+            command.StartsWith("specificTemporarySprite heart", StringComparison.OrdinalIgnoreCase)
+            || command.StartsWith("showKissFrame", StringComparison.OrdinalIgnoreCase)
+        );
+    }
+
+    /// <summary>Get the smaller milestones made redundant once a milestone is photographed.</summary>
+    private static IEnumerable<string> GetSupersededMilestones(string key)
+    {
+        MilestoneKey.Parse(key, out string type, out string? subject);
+        if (subject is null)
+            yield break;
+
+        switch (type)
+        {
+            case MilestoneKey.Wedding:
+                yield return MilestoneKey.Build(MilestoneKey.Engaged, subject);
+                yield return MilestoneKey.Build(MilestoneKey.BestFriends, subject);
+                break;
+
+            case MilestoneKey.Engaged:
+                yield return MilestoneKey.Build(MilestoneKey.BestFriends, subject);
+                break;
+        }
     }
 
     /// <summary>Get whether a character or player with the given name is visible on screen.</summary>
@@ -445,6 +478,7 @@ public class MilestoneWatcher
         public Event? Event;
         public int EventTicks;
         public int KissTick = -1;
+        public int KissCommandIndex = -1;
         public bool EventCaptured;
     }
 }
