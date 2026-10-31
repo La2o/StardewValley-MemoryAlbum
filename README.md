@@ -85,5 +85,6 @@ Each player has their own album and milestones. Photos are saved on the computer
 ## Translations
 All text is in `i18n/default.json`. Translations are welcome!
 
-## Source
-MIT licensed.
+## Links
+- Nexus Mods: https://www.nexusmods.com/stardewvalley/mods/54877
+- Source (MIT licensed): https://github.com/La2o/StardewValley-MemoryAlbum
